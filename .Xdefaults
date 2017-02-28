@@ -1,0 +1,80 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+!-------------------------------------------------------------------------------
+
+URxvt.depth:                256
+URxvt.geometry:             90x30
+!URxvt.transparent:          true
+URxvt.loginShell:           true
+URxvt.visualBell:           false
+
+! Fonts
+URxvt*font:                 xft:Hack-Regular:pixelsize=12
+URxvt*boldFont:             xft:Hack-Bold:pixelsize=12
+URxvt.letterSpace:          -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher,tabbed
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox-bin -new-tab
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysym.M-v:           perl:clipboard:paste
+
+! Tabs
+URxvt.tabbed.tabbar-fg: 10
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 12
+URxvt.tabbed.tab-bg: 0
+
+! Color Pallete
+
+URxvt.background: #403a30
+URxvt.foreground: #c5b994
+URxvt.cursorColor: #c5b994
+
+URxvt.color0:          #232119
+URxvt.color1:          #df3803
+URxvt.color2:          #df5a03 
+URxvt.color3:          #df8f03
+URxvt.color4:          #a8860c
+URxvt.color5:          #c47e46
+URxvt.color6:          #80cdbd
+URxvt.color7:          #a49a7c  
+URxvt.color8:          #232119
+URxvt.color9:          #df3b03  
+URxvt.color10:        #df6b03
+URxvt.color11:        #dfbb03   
+URxvt.color12:        #a89a0c
+URxvt.color13:        #dd8c4f
+URxvt.color14:        #98e4d4
+URxvt.color15:        #bfb491
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

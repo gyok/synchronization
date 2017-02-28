@@ -1,0 +1,2 @@
+#!/bin/sh
+feh  --bg-scale '/home/gyok/media/images/wallpapers/Yandex-Images-2016-10-15.jpg' 
