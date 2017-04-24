@@ -8,17 +8,20 @@ set backup             " keep a backup file (restore to previous version)
 set undofile           " keep an undo file (undo changes after closing)
 set ruler              " show the cursor position all the time
 set showcmd            " display incomplete commands
+set expandtab
+set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set smarttab
 set smartindent
-set expandtab
-set foldenable
+"set foldenable
 set exrc
 set secure
 set number
 set noexpandtab
+"set foldmethod=indent
+set undodir=~/.config/nvim/undo//
+setlocal path+=/home/gyok/program/build/cocos2d-x-3.14.1/cocos/
 
 " Don't use Ex mode, use Q for formatting
 noremap Q gq
@@ -29,6 +32,7 @@ inoremap <C-U> <C-G>u<C-U>
 
 nmap <F8> :TagbarOpenAutoClose<CR>
 nmap <F9> :NERDTreeToggle<CR>
+nmap <F5> :GundoToggle<CR>
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -42,18 +46,50 @@ set runtimepath+=/home/gyok/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 call dein#begin('/home/gyok/.config/nvim/plugins')
 call dein#add('Shougo/dein.vim')
 call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('Shougo/deoplete.nvim')
+call dein#add('tweekmonster/deoplete-clang2')
 call dein#add('majutsushi/tagbar')
 call dein#add('scrooloose/nerdtree')
 call dein#add('kien/rainbow_parentheses.vim')
+call dein#add('mhartington/oceanic-next')
+call dein#add('sjl/gundo.vim')
+call dein#add('tomtom/tcomment_vim')
 call dein#end()
 filetype plugin indent on
+filetype plugin on
 
-let g:deoplete#enable_at_startup = 1
+"+--Completion
+	source ~/.config/nvim/completion.vim
+"---Completion
+let g:airline_theme='oceanicnext'
+let g:airline_powerline_fonts = 1
+	"+--Rainbow Parentheses"
+	let g:rbpt_max = 16
+	let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+	"---Rainbow Parentheses"
 
 " Switch syntax highlighting on
 syntax on
+colorscheme OceanicNext
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'textwidth' set to 72,
@@ -77,6 +113,16 @@ augroup vimrcEx
 
 augroup END
 
+	"+--Oceanic next theme"
+	" For Neovim 0.1.3 and 0.1.4
+	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	
+	" Or if you have Neovim >= 0.1.5
+	if (has("termguicolors"))
+	 set termguicolors
+	endif
+	
+	"---Oceanic next theme"
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
